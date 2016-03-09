@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="folder_open.png">res/glyphicons-145-folder-open.png</file>
+        <file alias="right_arrow.png">res/glyphicons-224-chevron-right.png</file>
+        <file alias="left_arrow.png">res/glyphicons-225-chevron-left.png</file>
+    </qresource>
+</RCC>
