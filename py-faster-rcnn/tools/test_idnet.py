@@ -50,7 +50,7 @@ def reid_eval(output_dir, imgmat, protoc, test_images):
     imname_to_det_feat = {}
     for imname, det, feat in zip(test_images, gallery_det, gallery_feat):
         scores = det[:, 4].ravel()
-        inds = np.where(scores >= 0.8)[0]
+        inds = np.where(scores >= 0.5)[0]
         if len(inds) > 0:
             det = det[inds]
             feat = feat[inds]
