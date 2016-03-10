@@ -433,7 +433,7 @@ message LossParameter {
     // Outputs that receive the ignore label will NOT be ignored in computing
     // the normalization factor.
     FULL = 0;
-    // Divide by the total number of output locations that do not take the 
+    // Divide by the total number of output locations that do not take the
     // ignore_label.  If ignore_label is not set, this behaves like FULL.
     VALID = 1;
     // Divide by the batch size.
@@ -446,6 +446,9 @@ message LossParameter {
   // is not specified, then setting this to false will be equivalent to
   // normalization = BATCH_SIZE to be consistent with previous behavior.
   optional bool normalize = 2;
+
+  optional int32 rand_proj_num = 4 [default = 100];
+  optional string rand_proj_policy = 5 [default = "topk"];
 }
 
 // Messages that store parameters used by individual layer types follow, in
@@ -674,7 +677,7 @@ message EltwiseParameter {
 // Message that stores parameters used by ELULayer
 message ELUParameter {
   // Described in:
-  // Clevert, D.-A., Unterthiner, T., & Hochreiter, S. (2015). Fast and Accurate 
+  // Clevert, D.-A., Unterthiner, T., & Hochreiter, S. (2015). Fast and Accurate
   // Deep Network Learning by Exponential Linear Units (ELUs). arXiv
   optional float alpha = 1 [default = 1];
 }
